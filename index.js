@@ -106,7 +106,60 @@ app.post("/", (req, res) => {
         `);
       } catch (e) {
         res.send(
-          `<h2>Error fetching weather for "${query}". Please try again.</h2><a href="/">Go back</a>`
+          `
+             <!DOCTYPE html>
+        <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Weather Result</title>
+              <style>
+                body {
+                  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                  background: linear-gradient(to right, #5f2030, #fa0208);
+                  color: white;
+                  text-align: center;
+                  padding: 50px;
+                }
+                .weather-box {
+                  background: rgba(255, 255, 255, 0.1);
+                  padding: 30px;
+                  border-radius: 12px;
+                  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+                  display: inline-block;
+                  margin-top: 30px;
+                }
+                h2 {
+                  font-size: 2.5rem;
+                  color: yellow;
+                }
+               
+                a {
+                  display: block;
+                  width: fit-content;
+                  margin: 0 auto;
+                  text-align: center;
+                  font-weight: bold;
+                  background-color: #ffffff;
+                  color: #1e3c72;
+                  padding: 10px 20px;
+                  border-radius: 5px;
+                  margin-top: 30px;
+                  text-decoration: none;
+                  font-size: 0.9rem;
+                }
+
+
+
+              </style>
+            </head>
+            <body>
+              <div class="weather-box">
+                
+              <h2>Error fetching weather for "${query}". Please try again.</h2><a href="/">Go back</a></div>
+            </body>
+        </html>
+              `
         );
       }
     });
