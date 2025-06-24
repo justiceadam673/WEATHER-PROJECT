@@ -17,15 +17,15 @@ app.post("/", (req, res) => {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}&units=${units}`;
 
   https.get(url, (response) => {
-    let rawData = "";
+    let justiceData = "";
 
-    response.on("data", (chunk) => {
-      rawData += chunk;
+    response.on("data", (justice) => {
+      justiceData += justice;
     });
 
     response.on("end", () => {
       try {
-        const wedaData = JSON.parse(rawData);
+        const wedaData = JSON.parse(justiceData);
 
         const temp = wedaData.main.temp;
         const desc = wedaData.weather[0].description;
