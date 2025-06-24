@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #2980b9, #6dd5fa);
+        color: #fff;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+      }
+
+      form {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        backdrop-filter: blur(5px);
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: #fff;
+      }
+
+      input[type="text"] {
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        width: 250px;
+        margin-bottom: 15px;
+      }
+
+      button {
+        padding: 12px 25px;
+        background-color: #ffffff;
+        color: #2980b9;
+        font-weight: bold;
+        font-size: 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #f1f1f1;
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 20px;
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Weather Forecast</h1>
+    <form action="/" method="POST">
+      <label for="cityInput">Enter a City Name</label>
+      <input
+        type="text"
+        name="cityName"
+        id="cityInput"
+        placeholder="e.g. London"
+        required
+      />
+      <br />
+      <button type="submit">Check Weather</button>
+    </form>
+    <div class="footer">
+      &copy; 2025 Weather App | Powered by OpenWeatherMap
+    </div>
+  </body>
+</html>
